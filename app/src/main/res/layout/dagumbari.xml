@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다금바리 특징"
+        android:layout_gravity="center"
+        android:textSize="40dp"
+        android:fontFamily="@font/cafe24dongdong"
+        android:layout_marginTop="100dp"
+        android:textColor="#2195F1"/>
+
+     <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="400dp"
+         android:src="@drawable/point_dagum"
+         android:layout_gravity="center"
+         android:layout_marginTop="50dp"
+         android:layout_marginStart="20dp"/>
+</LinearLayout>
