@@ -43,6 +43,11 @@ class selectimage : AppCompatActivity() {
         selectimg = findViewById<ImageView>(R.id.selectimg)
         resultbtn = findViewById<Button>(R.id.resultbtn)
 
+
+
+
+
+
 //        이미지 클릭 시 사진촬영, 앨범선택 중 선택가능
         selectimg.setOnClickListener {
             var dlglogin = AlertDialog.Builder(this)
@@ -62,6 +67,9 @@ class selectimage : AppCompatActivity() {
         }
 
         resultbtn.setOnClickListener {
+
+
+
             val stream = ByteArrayOutputStream()
             val bitmap = (selectimg!!.drawable as BitmapDrawable).bitmap
             val scale = (1024 / bitmap.width.toFloat())
