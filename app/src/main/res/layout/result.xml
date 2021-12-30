@@ -73,9 +73,7 @@
             android:layout_gravity="end|bottom"
             android:layout_margin="16dp"
             app:backgroundTint="@color/purple_500"
-
             android:src="@drawable/ackground"/>
-
     </LinearLayout>
 
 </LinearLayout>
