@@ -18,6 +18,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
+import androidx.core.util.component1
+import androidx.core.util.component2
+import com.example.fish.tflite.ClassifierWithModel
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
 import java.io.ByteArrayOutputStream
@@ -42,6 +45,7 @@ class selectimage : AppCompatActivity() {
 
         selectimg = findViewById<ImageView>(R.id.selectimg)
         resultbtn = findViewById<Button>(R.id.resultbtn)
+
 
 
 
@@ -79,8 +83,6 @@ class selectimage : AppCompatActivity() {
             resize.compress(Bitmap.CompressFormat.JPEG, 100, stream)
             val byteArray = stream.toByteArray()
             val intent = Intent(this@selectimage, result::class.java)
-            intent.putExtra("integer", 300)
-            intent.putExtra("double", 3.141592)
             intent.putExtra("image", byteArray)
             startActivity(intent)
 
@@ -150,25 +152,52 @@ class selectimage : AppCompatActivity() {
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == getGalleryImg && resultCode == RESULT_OK && data != null && data != null) {
-            selectedImgUri = data.data!!
-            selectimg.setImageURI(selectedImgUri)
+        var bitmap : Bitmap? = null
+//        if (requestCode == getGalleryImg && resultCode == RESULT_OK && data != null && data != null) {
+//            selectedImgUri = data.data!!
+//            selectimg.setImageURI(selectedImgUri)
+//        }
+//
+//        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK){
+//            val file = File(currentPhotoPath)
+//            if (Build.VERSION.SDK_INT < 28) {
+//                val bitmap = MediaStore.Images.Media
+//                    .getBitmap(contentResolver, Uri.fromFile(file))
+//                selectimg.setImageBitmap(bitmap)
+//            }
+//            else{
+//                val decode = ImageDecoder.createSource(this.contentResolver,
+//                    Uri.fromFile(file))
+//                val bitmap = ImageDecoder.decodeBitmap(decode)
+//                selectimg.setImageBitmap(bitmap)
+//            }
+//        }
+
+        if(resultCode == Activity.RESULT_OK){
+            // 갤러리 선택
+            if(requestCode == getGalleryImg && data != null){
+                selectedImgUri = data.data!!
+                bitmap = MediaStore.Images.Media
+                    .getBitmap(contentResolver, selectedImgUri)
+                selectimg.setImageBitmap(bitmap)
+            }
+            // 사진촬영
+            else if(requestCode == REQUEST_IMAGE_CAPTURE ){
+                val file = File(currentPhotoPath)
+                if (Build.VERSION.SDK_INT < 28) {
+                    bitmap = MediaStore.Images.Media
+                        .getBitmap(contentResolver, Uri.fromFile(file))
+                    selectimg.setImageBitmap(bitmap)
+                }
+                else{
+                    bitmap = MediaStore.Images.Media
+                        .getBitmap(contentResolver, Uri.fromFile(file))
+                    selectimg.setImageBitmap(bitmap)
+                }
+            }
         }
 
-        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK){
-            val file = File(currentPhotoPath)
-            if (Build.VERSION.SDK_INT < 28) {
-                val bitmap = MediaStore.Images.Media
-                    .getBitmap(contentResolver, Uri.fromFile(file))
-                selectimg.setImageBitmap(bitmap)
-            }
-            else{
-                val decode = ImageDecoder.createSource(this.contentResolver,
-                    Uri.fromFile(file))
-                val bitmap = ImageDecoder.decodeBitmap(decode)
-                selectimg.setImageBitmap(bitmap)
-            }
-        }
+
     }
 }
 
