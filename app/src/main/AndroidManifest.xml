@@ -15,7 +15,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Fish">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -27,6 +27,7 @@
         </activity>
         <activity android:name=".selectimage"/>
         <activity android:name=".result"/>
+        <activity android:name=".Community"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -28,8 +28,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@color/white"
         android:text="result"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:fontFamily="@font/cafe24dongdong"
         android:layout_marginTop="50dp"/>
 </LinearLayout>

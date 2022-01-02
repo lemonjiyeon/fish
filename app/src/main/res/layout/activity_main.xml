@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -28,8 +29,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@color/white"
         android:text="Start"
         android:fontFamily="@font/cafe24dongdong"
-        android:textSize="30dp"/>
+        android:textSize="20dp"/>
+
+
+    <com.github.edsergeev.TextFloatingActionButton
+        android:id="@+id/combtn"
+        android:layout_gravity="end|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_home_24"
+        android:backgroundTint="@color/purple_500"
+        android:text="community"
+        android:textColor="#ffffff"
+        android:textSize="11sp"
+        app:borderWidth="0dp"
+        app:fabCustomSize="70dp"
+        app:text_y_offset="18dp"
+        app:useCompatPadding="true"
+        tools:ignore="MissingClass"/>
 </LinearLayout>
