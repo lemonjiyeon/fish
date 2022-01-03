@@ -12,6 +12,9 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
@@ -21,6 +24,7 @@ import androidx.core.content.FileProvider
 import androidx.core.util.component1
 import androidx.core.util.component2
 import com.example.fish.tflite.ClassifierWithModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
 import java.io.ByteArrayOutputStream
@@ -37,6 +41,12 @@ class selectimage : AppCompatActivity() {
     val REQUEST_IMAGE_CAPTURE = 1
     lateinit var currentPhotoPath : String
 
+
+
+    lateinit var home : FloatingActionButton
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.selectimage)
@@ -46,6 +56,7 @@ class selectimage : AppCompatActivity() {
         selectimg = findViewById<ImageView>(R.id.selectimg)
         resultbtn = findViewById<Button>(R.id.resultbtn)
 
+        home = findViewById<View>(R.id.fab) as FloatingActionButton
 
 
 
@@ -70,6 +81,17 @@ class selectimage : AppCompatActivity() {
             dlglogin.show()
         }
 
+
+        home.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
+
+
+
         resultbtn.setOnClickListener {
 
 
@@ -88,6 +110,19 @@ class selectimage : AppCompatActivity() {
 
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //    사진 촬영 권한 주기
     fun settingPermission(){

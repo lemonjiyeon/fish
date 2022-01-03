@@ -33,6 +33,7 @@ class result : AppCompatActivity() , View.OnClickListener {
     lateinit var fab : FloatingActionButton
     lateinit var fab1 : FloatingActionButton
     lateinit var fab2 : FloatingActionButton
+    lateinit var home : FloatingActionButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +46,7 @@ class result : AppCompatActivity() , View.OnClickListener {
         }catch (e : IOException){
             e.printStackTrace()
         }
-
+        home = findViewById<View>(R.id.home) as FloatingActionButton
         morebtn = findViewById<Button>(R.id.morebtn)
         resultimg = findViewById<ImageView>(R.id.resultimg)
         resulttxt = findViewById<TextView>(R.id.resulttxt)
@@ -59,6 +60,7 @@ class result : AppCompatActivity() , View.OnClickListener {
         fab1!!.setOnClickListener(this)
         fab2!!.setOnClickListener(this)
 
+
         val byteArray = intent.getByteArrayExtra("image")
         val bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray!!.size)
 
@@ -70,6 +72,11 @@ class result : AppCompatActivity() , View.OnClickListener {
             resulttxt.setText(resultStr)
 
         }
+
+        home.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+       }
 
         morebtn.setOnClickListener {
             val intent = Intent(applicationContext, selectimage::class.java)
