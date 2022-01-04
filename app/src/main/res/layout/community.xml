@@ -54,13 +54,13 @@
             android:id="@+id/tab_Item3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="사기식당\n게시판" />
+            android:text="사담\n게시판" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab_Item4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="사담\n게시판" />
+            android:text="신고" />
 
     </com.google.android.material.tabs.TabLayout>
 
