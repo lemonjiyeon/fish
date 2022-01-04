@@ -106,6 +106,7 @@
             app:backgroundTint="@color/purple_500" />
     </LinearLayout>
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/home"
         android:layout_width="91dp"
