@@ -15,26 +15,29 @@
         android:layout_marginTop="100dp"
         android:textColor="#2195F1"
         android:textStyle="bold"
-        android:fontFamily="@font/cafe24dongdong"/>
+        android:fontFamily="@font/cafe24dongdong"
+        />
 
     <ImageView
         android:layout_width="362dp"
         android:layout_height="173dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:src="@drawable/fishs" />
+        android:src="@drawable/fishs"
+        />
 
     <Button
         android:id="@+id/start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="147dp"
+        android:layout_height="62dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/purple_500"
-        android:textColor="@color/white"
-        android:text="Start"
         android:fontFamily="@font/cafe24dongdong"
-        android:textSize="20dp"/>
+        android:text="Start"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginBottom="70dp"/>
 
 
     <com.github.edsergeev.TextFloatingActionButton
@@ -55,8 +58,8 @@
 
     <com.github.edsergeev.TextFloatingActionButton
         android:id="@+id/phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="69dp"
+        android:layout_height="120dp"
         android:layout_gravity="end|bottom"
         android:backgroundTint="@color/purple_500"
         android:src="@drawable/ic_baseline_phone_24"

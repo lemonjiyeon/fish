@@ -87,14 +87,7 @@ class selectimage : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
-
-
-
         resultbtn.setOnClickListener {
-
-
 
             val stream = ByteArrayOutputStream()
             val bitmap = (selectimg!!.drawable as BitmapDrawable).bitmap
@@ -107,22 +100,8 @@ class selectimage : AppCompatActivity() {
             val intent = Intent(this@selectimage, result::class.java)
             intent.putExtra("image", byteArray)
             startActivity(intent)
-
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //    사진 촬영 권한 주기
     fun settingPermission(){
