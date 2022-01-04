@@ -42,7 +42,7 @@
         android:layout_gravity="end|bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_home_24"
+        android:src="@drawable/ic_baseline_message_24"
         android:backgroundTint="@color/purple_500"
         android:text="community"
         android:textColor="#ffffff"

@@ -146,7 +146,7 @@ class selectimage : AppCompatActivity() {
             .setDeniedMessage("카메라 권한 요청 거부")
             .setPermissions(
                 android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-//                android.Manifest.permission.READ_EXTERNAL_STORAGE,
+                android.Manifest.permission.READ_EXTERNAL_STORAGE,
                 android.Manifest.permission.CAMERA)
             .check()
     }
@@ -188,25 +188,25 @@ class selectimage : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         var bitmap : Bitmap? = null
-//        if (requestCode == getGalleryImg && resultCode == RESULT_OK && data != null && data != null) {
-//            selectedImgUri = data.data!!
-//            selectimg.setImageURI(selectedImgUri)
-//        }
-//
-//        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK){
-//            val file = File(currentPhotoPath)
-//            if (Build.VERSION.SDK_INT < 28) {
-//                val bitmap = MediaStore.Images.Media
-//                    .getBitmap(contentResolver, Uri.fromFile(file))
-//                selectimg.setImageBitmap(bitmap)
-//            }
-//            else{
-//                val decode = ImageDecoder.createSource(this.contentResolver,
-//                    Uri.fromFile(file))
-//                val bitmap = ImageDecoder.decodeBitmap(decode)
-//                selectimg.setImageBitmap(bitmap)
-//            }
-//        }
+        if (requestCode == getGalleryImg && resultCode == RESULT_OK && data != null && data != null) {
+            selectedImgUri = data.data!!
+            selectimg.setImageURI(selectedImgUri)
+        }
+
+        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK){
+            val file = File(currentPhotoPath)
+            if (Build.VERSION.SDK_INT < 28) {
+                val bitmap = MediaStore.Images.Media
+                    .getBitmap(contentResolver, Uri.fromFile(file))
+                selectimg.setImageBitmap(bitmap)
+            }
+            else{
+                val decode = ImageDecoder.createSource(this.contentResolver,
+                    Uri.fromFile(file))
+                val bitmap = ImageDecoder.decodeBitmap(decode)
+                selectimg.setImageBitmap(bitmap)
+            }
+        }
 
         if(resultCode == Activity.RESULT_OK){
             // 갤러리 선택
