@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/cafe24dongdong"
+        android:text="신고 및 자문기관"
+        android:textColor="#2195F1"
+        android:textSize="40dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="417dp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="해양수산부\n044-200-5122 \n\n
+제주테크노파크생물종다양성연구소\n064-720-2800 \n\n
+국립수산과학원\n051-720-2114\n\n
+수협노량진수산(주)\n02-2254-8071\n\n
+한국소비자원\n043-8800-5500\n\n
+한국소비자연맹\n02-795-1042\n\n
+소비환경뉴스\n031-336-3477\n\n
+소비자교육중앙회\n02-2273-6300\n\n
+소비자시민모임\n02-739-5441\n\n\n"/>
+    </ScrollView>
+
+
+</LinearLayout>
